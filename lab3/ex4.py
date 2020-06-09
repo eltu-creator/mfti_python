@@ -1,9 +1,22 @@
 from graph import *
 
 def main():
-    background(500, 700)
+    background(700, 500, 6)
 
-def background(width, height):
+    run()
+
+def landscape(width, height):
+    pass
+
+def waves(width, height, numWaves):
+    pass
+
+def background(width, height, numWaves):
     """draws background
     width, height are width and hight of the image"""
-    pass
+    canvasSize(width, height)
+    windowSize(width, height)
+    landscape(width, height)
+    waves(width, height, numWaves)
+
+main()
