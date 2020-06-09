@@ -9,16 +9,16 @@ def landscape(width, height):
     """"draws sky, see, beach
     height, width - size of the landscape"""
     penSize(0)
-    height_sky = 0.45*height
-    height_see = 0.7*height
-    height_beach = height
+    boarder_sky = 0.45*height
+    boarder_see = 0.7*height
+    boarder_beach = height
     brushColor(0, 200, 255)
-    rectangle(0, 0, width, height_sky) #sky
+    rectangle(0, 0, width, boarder_sky) #sky
     brushColor('blue')
-    rectangle(0, height_sky, width, height_see)
+    rectangle(0, boarder_sky, width, boarder_see)
     brushColor('yellow')
-    rectangle(0, height_see, width, height_beach)
-    return height_sky, height_see, height_beach
+    rectangle(0, boarder_see, width, boarder_beach)
+    return boarder_sky, boarder_see, boarder_beach
 
 def waves(width, height, numWaves):
     pass
@@ -29,8 +29,7 @@ def background(width, height, numWaves):
     canvasSize(width, height)
     windowSize(width, height)
 
-    height_sky, height_see, height_beach = landscape(width, height)
-    print(height_sky, height_see, height_beach)
+    boarder_sky, boarder_see, boarder_beach = landscape(width, height)
     waves(width, height, numWaves)
 
 main()
