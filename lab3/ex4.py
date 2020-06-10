@@ -54,7 +54,16 @@ def cloud(x, y, width, height):
     """"x, y - position of the top left oval, top left corner
     of the rectangle ovalis drawn into
     width, height - width and height of the rectangle"""
-    pass
+    penSize(1)
+    penColor('black')
+    brushColor('white')
+    oval(x, y, x + width, y + height)
+    oval(x + width/2, y, x + 3/2*width, y + height)
+    oval(x + width, y, x + 2*width, y + height)
+    oval(x - width/2, y + height/2, x + width/2, y + 3/2*height)
+    oval(x, y + height/2, x + width, y + 3/2*height)
+    oval(x + width/2, y + height/2, x + 3/2*width, y + 3/2*height)
+    oval(x + width, y + height/2, x + 2*width, y + 3/2*height)   
 
 def ship(x, y, size):
     """size - length of the pole, x, y - bottom of the pole"""
