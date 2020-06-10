@@ -5,7 +5,7 @@ def main():
     cloud(100, 100, 20, 20)
     ship(350, 350, 100, 20)
     sun(600, 100, 25)
-    umbrella(100, 400, 100, 100)
+    umbrella(100, 285, 175, 175)
 
     run()
 
@@ -29,8 +29,8 @@ def landscape(width, height):
 def waves(width, height, num_waves, boarder_see):
     """"draws waves
      width, height are width and hight of the image
-     num_waves - number of waves
-     boarder_see - boarder of the see"""
+     num_waves - number of waves, one wave - yellow + blue
+     boarder_see - y of the boarder of the see"""
     penSize(0)
     dl = width/(2*num_waves)
     position = dl/2
@@ -66,5 +66,16 @@ def sun(x, y, radius):
     circle(x, y, radius)
 
 def umbrella(x, y, width, height):
-    pass
+    """"width - width of the base of the triangle, height - total height
+    x, y - position of the tip of umbrella"""
+    penSize(0)
+    brushColor(246, 64, 89)
+    polygon([(x, y), (x - width/2, y + height/5), (x + width/2, y + height/5), (x, y)])
+    dl = width/7 #distance between line on umberlla
+    penColor('black')
+    for i in range(1, 7):
+        line(x, y, x - 1/2*width  + i*dl, y + height/5)
+    penColor(137, 63, 0)
+    penSize(1/20*width)
+    line(x, y + height/5, x, y + height)
 main()
