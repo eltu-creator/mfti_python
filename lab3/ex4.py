@@ -2,10 +2,14 @@ from graph import *
 
 def main():
     background(700, 500, 6)
-    cloud(100, 100, 20, 20)
+    cloud(150, 50, 30, 30)
+    cloud(50, 125, 50, 35)
+    cloud(300, 50, 40, 50)
     ship(500, 280, 100)
+    ship(300, 250, 50)
     sun(600, 100, 25)
     umbrella(100, 285, 175, 175)
+    umbrella(200, 340, 50, 100)
 
     run()
 
@@ -59,11 +63,11 @@ def cloud(x, y, width, height):
     brushColor('white')
     oval(x, y, x + width, y + height)
     oval(x + width/2, y, x + 3/2*width, y + height)
-    oval(x + width, y, x + 2*width, y + height)
     oval(x - width/2, y + height/2, x + width/2, y + 3/2*height)
     oval(x, y + height/2, x + width, y + 3/2*height)
     oval(x + width/2, y + height/2, x + 3/2*width, y + 3/2*height)
-    oval(x + width, y + height/2, x + 2*width, y + 3/2*height)   
+    oval(x + width, y, x + 2*width, y + height)
+    oval(x + width, y + height/2, x + 2*width, y + 3/2*height)
 
 def ship(x, y, size):
     """size - length of the pole, x, y - bottom of the pole"""
