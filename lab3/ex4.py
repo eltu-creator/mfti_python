@@ -3,7 +3,7 @@ from graph import *
 def main():
     background(700, 500, 6)
     cloud(100, 100, 20, 20)
-    ship(350, 350, 100, 20)
+    ship(500, 280, 100)
     sun(600, 100, 25)
     umbrella(100, 285, 175, 175)
 
@@ -56,8 +56,23 @@ def cloud(x, y, width, height):
     width, height - width and height of the rectangle"""
     pass
 
-def ship(x, y, width, heigth):
-    pass
+def ship(x, y, size):
+    """size - length of the pole, x, y - bottom of the pole"""
+    penSize(7/100*size)
+    penColor('black')
+    line(x, y, x, y - size) #pole
+    brushColor(100, 57, 0)
+    penColor('black')
+    penSize(1)
+    rectangle(x - 2/5*1.5*size, y, x + 3/5*1.5*size, y + 1/3*size)#base
+    polygon([(x + 3/5*1.5*size, y + 1/3*size), (x + (3/5*1.5 + 5/7)*size, y), (x + 3/5*1.5*size, y), (x + 3/5*1.5*size, y + 1/3*size)])#nose
+    brushColor(235, 240, 192)
+    polygon([(x + 7/200*size, y), (x + 4/7*size, y - 1/2*size), (x + 1/7*size, y - 1/2*size), (x + 7/200*size, y)])#tides
+    polygon([(x + 7/200*size, y - size), (x + 4/7*size, y - 1/2*size), (x + 1/7*size, y - 1/2*size), (x + 7/200*size, y - size)])#tides
+    #circle on the nose
+    penSize(4/100*size)
+    brushColor('white')
+    circle(x + 1.05*size, y + 1/7*size, 1/12*size)
 
 def sun(x, y, radius):
     """x, y - position of the centre"""
