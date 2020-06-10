@@ -4,8 +4,9 @@ def main():
     background(700, 500, 6)
     cloud(100, 100, 20, 20)
     ship(350, 350, 100, 20)
-    sun(100, 600, 25)
+    sun(600, 100, 25)
     umbrella(100, 400, 100, 100)
+
     run()
 
 def landscape(width, height):
@@ -41,7 +42,7 @@ def waves(width, height, num_waves, boarder_see):
         position += 2*dl
 
 def background(width, height, num_waves):
-    """draws background
+    """draws background and sets canvas&window size
     width, height are width and hight of the image"""
     canvasSize(width, height)
     windowSize(width, height)
@@ -59,7 +60,10 @@ def ship(x, y, width, heigth):
     pass
 
 def sun(x, y, radius):
-    pass
+    """x, y - position of the centre"""
+    penSize(0)
+    brushColor('yellow')
+    circle(x, y, radius)
 
 def umbrella(x, y, width, height):
     pass
