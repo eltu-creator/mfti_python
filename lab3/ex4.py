@@ -1,15 +1,24 @@
 from graph import *
 
 def main():
-    background(700, 500, 6)
-    cloud(150, 50, 30, 30)
-    cloud(50, 125, 50, 35)
-    cloud(300, 50, 40, 50)
-    ship(500, 280, 100)
-    ship(300, 250, 50)
-    sun(600, 100, 25)
-    umbrella(100, 285, 175, 175)
-    umbrella(200, 340, 50, 100)
+    i, j, k = 0, 0, 0
+    while True:
+        background(700, 500, 6)
+        sun(600, 100, 25)
+        cloud(150 + i, 50, 30, 30)
+        cloud(50 + j, 125, 50, 35)
+        cloud(300 + k, 50, 40, 50)
+        ship(500 + i, 280, 100)
+        ship(300 + k, 250, 50)
+        umbrella(100, 285, 175, 175)
+        umbrella(200, 340, 50, 100)
+
+        if 300 + k > 600:
+            close()
+        else:
+            i += 10
+            j += -5
+            k += 5
 
     run()
 
