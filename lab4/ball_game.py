@@ -27,13 +27,14 @@ def click(event):
     if distance < r:
         points += 1
 def point_count():
+    '''Count points'''
     global points
     canv.create_text(200, 0, text=['points', points], anchor=NE, fill='grey')
     root.after(1000, point_count)
 
 points = 0
-point_count()
 new_ball()
+point_count()
 canv.bind('<Button-1>', click)
 
 mainloop()
